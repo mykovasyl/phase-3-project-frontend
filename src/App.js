@@ -1,5 +1,11 @@
 import "./App.css";
 import { Route } from "react-router-dom/cjs/react-router-dom.min";
+import React from "react";
+import NavBar from "./NavBar";
+import Home from "./Home";
+import ChoreList from "./ChoreList";
+import AssignChores from "./AssignChores";
+import AddChildren from "./AddChildren";
 
 function App() {
   return (
