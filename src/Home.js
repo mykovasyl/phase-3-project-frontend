@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -20,7 +21,11 @@ function Home() {
         Parents can choose what rewards will be available for different levels
         with the child's input.
       </p>
-      <h2>Assign Chores</h2>
+      <nav>
+        <Link to="/assignchores">
+          <h2>Assign Chores</h2>
+        </Link>
+      </nav>
       <p>
         On this page you'll be able to assign a specific chore to your child.
       </p>
@@ -32,7 +37,12 @@ function Home() {
         If you have multiple children, a drop down is available to choose who
         the chore will be assigned to.
       </p>
-      <h2>Add Children</h2>
+      <nav>
+        <Link to="/addchildren">
+          <h2>Add Children</h2>
+        </Link>
+      </nav>
+
       <p>
         On this page you can add children into the system so they can be
         assigned chores.

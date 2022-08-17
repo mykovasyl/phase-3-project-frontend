@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 
-function AddChildren() {
+function AddChildren({ children, setChildren }) {
   const [childName, setChildName] = useState();
 
   function handleNameInput(e) {
-    console.log(childName);
     setChildName(e.target.value);
   }
 
   function handleNewChild(e) {
     e.preventDefault();
-    console.log(childName);
     fetch("http://localhost:9292/children", {
       method: "POST",
       headers: {
@@ -19,7 +17,9 @@ function AddChildren() {
       body: JSON.stringify(childName),
     })
       .then((resp) => resp.json())
-      .then((data) => console.log(data));
+      .then((newChild) => {
+        setChildren([...newChild, children]);
+      });
   }
 
   return (
@@ -31,6 +31,7 @@ function AddChildren() {
         <input type="text" onChange={handleNameInput} />
         <button type="submit">Submit</button>
       </form>
+      <div></div>
     </div>
   );
 }
