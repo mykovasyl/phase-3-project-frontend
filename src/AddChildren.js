@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { HiTrash } from "react-icons/hi";
 
 function AddChildren({ children, setChildren }) {
   const [childName, setChildName] = useState();
@@ -22,6 +23,23 @@ function AddChildren({ children, setChildren }) {
       });
   }
 
+  function handleDelete(e) {
+    console.log(e);
+  }
+
+  let childrenRows = children.map((child) => {
+    return (
+      <tr>
+        <td>{child.name}</td>
+        <td>
+          <button onClick={handleDelete}>
+            <HiTrash />
+          </button>
+        </td>
+      </tr>
+    );
+  });
+
   return (
     <div>
       <h1>Add Children To Your Household</h1>
@@ -31,7 +49,13 @@ function AddChildren({ children, setChildren }) {
         <input type="text" onChange={handleNameInput} />
         <button type="submit">Submit</button>
       </form>
-      <div></div>
+      <table>
+        <tr>
+          <td>Name</td>
+          <td>Edit/Delete</td>
+        </tr>
+        {childrenRows}
+      </table>
     </div>
   );
 }
