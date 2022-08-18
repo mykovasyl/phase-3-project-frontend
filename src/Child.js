@@ -1,12 +1,12 @@
 import React from "react";
 import { HiTrash } from "react-icons/hi";
 
-function Child({ childName, handleDelete }) {
+function Child({ id, name, handleDelete }) {
   return (
     <div>
-      <td>{childName}</td>
+      <td>{name}</td>
       <td>
-        <button onClick={handleDelete}>
+        <button onClick={handleDelete(id)}>
           <HiTrash />
         </button>
       </td>

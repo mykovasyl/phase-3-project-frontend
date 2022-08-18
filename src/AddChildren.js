@@ -23,12 +23,19 @@ function AddChildren({ children, setChildren }) {
       });
   }
 
-  function handleDelete(e) {
-    console.log(e.previousSibling);
+  function handleDelete(id) {
+    const newChildren = children.filter((child) => child.id !== id);
+    fetch("http://localhost:9292/children/:id", {
+      method: "DELETE",
+    });
   }
 
   let childrenRows = children.map((child) => {
-    return <div></div>;
+    return (
+      <tr>
+        <Child id={child.id} name={child.name} handleDelete={handleDelete} />
+      </tr>
+    );
   });
 
   return (
@@ -44,9 +51,6 @@ function AddChildren({ children, setChildren }) {
         <tr>
           <td>Name</td>
           <td>Edit/Delete</td>
-        </tr>
-        <tr>
-          <Child handleDelete={handleDelete} />
         </tr>
         {childrenRows}
       </table>
