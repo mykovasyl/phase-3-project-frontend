@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function AssignChores({ children, chores, setChores }) {
-  const [newChore, setnewChore] = useState({
+  const [newChore, setNewChore] = useState({
     name: "",
     dueBy: "",
     points: "",
@@ -23,23 +23,24 @@ function AssignChores({ children, chores, setChores }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: newChore.name,
-          due_by: newChore.dueBy,
-          points: newChore.points,
-          child_id: newChore.childId,
-        }),
+        body: JSON.stringify(newChore),
       })
         .then((resp) => resp.json())
         .then((postedChore) => {
           setChores([...chores, postedChore]);
+          setNewChore({
+            name: "",
+            dueBy: "",
+            points: "",
+            childId: "",
+          });
         });
     }
   }
 
   function handleChange(e) {
     console.log(`name: ${e.target.name}, value: ${e.target.value}`);
-    setnewChore({ ...newChore, [e.target.name]: e.target.value });
+    setNewChore({ ...newChore, [e.target.name]: e.target.value });
   }
 
   let childOptions = children.map((child) => {
