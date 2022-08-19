@@ -31,7 +31,11 @@ function App() {
           <ChoreList chores={chores} setChores={setChores} />
         </Route>
         <Route path="/assignchores">
-          <AssignChores children={children} setChores={setChores} />
+          <AssignChores
+            children={children}
+            chores={chores}
+            setChores={setChores}
+          />
         </Route>
         <Route path="/addchildren">
           <AddChildren children={children} setChildren={setChildren} />
