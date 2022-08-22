@@ -1,7 +1,7 @@
 import React from "react";
 import { HiTrash } from "react-icons/hi";
 
-function Child({ id, name, children, setChildren }) {
+function ChildRow({ id, name, children, setChildren }) {
   function handleDelete() {
     const newChildren = children.filter((child) => child.id !== id);
     fetch(`http://localhost:9292/children/${id}`, {
@@ -22,4 +22,4 @@ function Child({ id, name, children, setChildren }) {
   );
 }
 
-export default Child;
+export default ChildRow;

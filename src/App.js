@@ -15,12 +15,10 @@ function App() {
     fetch("http://localhost:9292/children")
       .then((resp) => resp.json())
       .then((allChildren) => setChildren(allChildren));
-  }, []);
 
-  useEffect(() => {
-    fetch("http://localhost:9292/children")
+    fetch("http://localhost:9292/chores")
       .then((resp) => resp.json())
-      .then((allChildren) => setChildren(allChildren));
+      .then((allChores) => setChores(allChores));
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Child from "./Child";
+import ChildRow from "./ChildRow";
 
 function AddChildren({ children, setChildren }) {
   const [childName, setChildName] = useState();
@@ -26,7 +26,7 @@ function AddChildren({ children, setChildren }) {
 
   let childrenRows = children.map((child) => {
     return (
-      <Child
+      <ChildRow
         key={child.id}
         id={child.id}
         name={child.name}
@@ -54,7 +54,7 @@ function AddChildren({ children, setChildren }) {
         <tbody>
           <tr>
             <td>Name</td>
-            <td>Edit/Delete</td>
+            <td>Delete</td>
           </tr>
           {childrenRows}
         </tbody>

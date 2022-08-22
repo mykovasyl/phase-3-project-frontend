@@ -3,18 +3,18 @@ import React, { useState } from "react";
 function AssignChores({ children, chores, setChores }) {
   const [newChore, setNewChore] = useState({
     name: "",
-    dueBy: "",
+    due_by: "",
     points: "",
-    childId: "",
+    child_id: "",
   });
 
   function handleSubmit(e) {
     e.preventDefault();
     if (
       newChore.name === "" ||
-      newChore.dueBy === "" ||
+      newChore.due_by === "" ||
       newChore.points === "" ||
-      newChore.childId === ""
+      newChore.child_id === ""
     ) {
       alert("Please make sure the form is completely filled out!");
     } else {
@@ -30,9 +30,9 @@ function AssignChores({ children, chores, setChores }) {
           setChores([...chores, postedChore]);
           setNewChore({
             name: "",
-            dueBy: "",
+            due_by: "",
             points: "",
-            childId: "",
+            child_id: "",
           });
         });
     }
@@ -70,7 +70,7 @@ function AssignChores({ children, chores, setChores }) {
         <label>Due by:</label>
         <input
           type="date"
-          name="dueBy"
+          name="due_by"
           value={newChore.dueBy}
           onChange={handleChange}
         ></input>
@@ -84,7 +84,7 @@ function AssignChores({ children, chores, setChores }) {
         ></input>
         <br></br>
         <label>Assign to child:</label>
-        <select name="childId" onChange={handleChange}>
+        <select name="child_id" onChange={handleChange}>
           <option value="none" selected disabled hidden>
             Select a child
           </option>
