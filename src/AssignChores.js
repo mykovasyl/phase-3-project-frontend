@@ -71,7 +71,7 @@ function AssignChores({ children, chores, setChores }) {
         <input
           type="date"
           name="due_by"
-          value={newChore.dueBy}
+          value={newChore.due_by}
           onChange={handleChange}
         ></input>
         <br></br>
