@@ -84,10 +84,12 @@ function AssignChores({ children, chores, setChores }) {
         ></input>
         <br></br>
         <label>Assign to child:</label>
-        <select name="child_id" onChange={handleChange}>
-          <option value="none" selected disabled hidden>
-            Select a child
-          </option>
+        <select
+          name="child_id"
+          value={newChore.child_id}
+          onChange={handleChange}
+        >
+          <option value="">Select a child</option>
           {childOptions}
         </select>
         <br></br>
