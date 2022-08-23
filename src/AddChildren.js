@@ -54,7 +54,7 @@ function AddChildren({ children, setChildren }) {
         <tbody>
           <tr>
             <td>Name</td>
-            <td>Delete</td>
+            <td>Edit/Delete</td>
           </tr>
           {childrenRows}
         </tbody>
