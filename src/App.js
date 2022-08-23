@@ -14,11 +14,16 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:9292/children")
       .then((resp) => resp.json())
-      .then((allChildren) => setChildren(allChildren));
+      .then((allChildren) => {
+        console.log(allChildren);
+        setChildren(allChildren);
+      });
 
     fetch("http://localhost:9292/chores")
       .then((resp) => resp.json())
-      .then((allChores) => setChores(allChores));
+      .then((allChores) => {
+        setChores(allChores);
+      });
   }, []);
 
   return (
@@ -26,7 +31,11 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/chorelist">
-          <ChoreList chores={chores} setChores={setChores} />
+          <ChoreList
+            chores={chores}
+            setChores={setChores}
+            children={children}
+          />
         </Route>
         <Route path="/assignchores">
           <AssignChores
