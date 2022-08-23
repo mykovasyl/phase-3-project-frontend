@@ -15,7 +15,6 @@ function App() {
     fetch("http://localhost:9292/children")
       .then((resp) => resp.json())
       .then((allChildren) => {
-        console.log(allChildren);
         setChildren(allChildren);
       });
 

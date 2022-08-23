@@ -1,13 +1,21 @@
 import React from "react";
-import Chore from "./Chore";
+import ChoreRow from "./ChoreRow";
 
 function ChoreList({ chores, setChores, children }) {
   const currentChores = chores.filter((chore) => chore.completed === false);
   const completedChores = chores.filter((chore) => chore.completed === true);
 
+  function handleDelete(id) {
+    const choresAfterDelete = chores.filter((chore) => chore.id !== id);
+    fetch(`http://localhost:9292/chores/${id}`, {
+      method: "DELETE",
+    });
+    setChores(choresAfterDelete);
+  }
+
   let currentChoreRows = currentChores.map((chore) => {
     return (
-      <Chore
+      <ChoreRow
         key={chore.id}
         id={chore.id}
         name={chore.name}
@@ -15,13 +23,14 @@ function ChoreList({ chores, setChores, children }) {
         dueBy={chore.due_by}
         children={children}
         childId={chore.child_id}
+        handleDelete={handleDelete}
       />
     );
   });
 
   let completedChoreRows = completedChores.map((chore) => {
     return (
-      <Chore
+      <ChoreRow
         key={chore.id}
         id={chore.id}
         name={chore.name}
@@ -29,6 +38,7 @@ function ChoreList({ chores, setChores, children }) {
         dueBy={chore.due_by}
         children={children}
         childId={chore.child_id}
+        handleDelete={handleDelete}
       />
     );
   });
@@ -44,7 +54,7 @@ function ChoreList({ chores, setChores, children }) {
             <td>Points</td>
             <td>Due By</td>
             <td>Assigned to</td>
-            <td>Edit/Delete</td>
+            <td>Edit(not available)/Delete</td>
           </tr>
         </thead>
         <tbody>{currentChoreRows}</tbody>
@@ -57,7 +67,7 @@ function ChoreList({ chores, setChores, children }) {
             <td>Points</td>
             <td>Due By</td>
             <td>Assigned to</td>
-            <td>Edit/Delete</td>
+            <td>Edit(not available)/Delete</td>
           </tr>
         </thead>
         <tbody>{completedChoreRows}</tbody>

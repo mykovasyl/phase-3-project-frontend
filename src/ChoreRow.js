@@ -1,8 +1,18 @@
 import React from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 
-function Chore({ id, name, points, dueBy, children, childId }) {
+function ChoreRow({
+  id,
+  name,
+  points,
+  dueBy,
+  children,
+  childId,
+  handleDelete,
+}) {
   const childName = children.find((child) => child.id === childId).name;
+
+  function handleEdit() {}
 
   return (
     <tr>
@@ -11,15 +21,15 @@ function Chore({ id, name, points, dueBy, children, childId }) {
       <td>{dueBy}</td>
       <td>{childName}</td>
       <td>
-        <button>
+        <button onClick={handleEdit}>
           <FaEdit />
         </button>
         <button>
-          <FaTrashAlt />
+          <FaTrashAlt onClick={() => handleDelete(id)} />
         </button>
       </td>
     </tr>
   );
 }
 
-export default Chore;
+export default ChoreRow;
