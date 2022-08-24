@@ -1,4 +1,4 @@
-#Chores Game
+# Chores Game
 
 This application was built as a 3rd project for Flatiron's Software Engineering bootcamp. The front end mimics what a parent would see on their side of the login. Since logins are not currently part of the curriculum, several aspects of the application remain unfinished for a later time. 
 
