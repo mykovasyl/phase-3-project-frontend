@@ -2,21 +2,21 @@
 
 This application was built as a 3rd project for Flatiron's Software Engineering bootcamp. The front end mimics what a parent would see on their side of the login. Since logins are not currently part of the curriculum, several aspects of the application remain unfinished for a later time. 
 
-##Back End 
+## Back End 
 
 The backend is built on Ruby and uses ActiveRecord for the models. [Backend](https://github.com/mykovasyl/phase-3-sinatra-react-project-backend)
 
-##Components
+## Components
 
-###ChoreList + ChoreRow
+### ChoreList + ChoreRow
 
 Chore List creates two tables, one for current and one for completed chores, using the Chore Row component to create each line on the tables.
 
-###AssignChores
+### AssignChores
 
 Here chores are assigned to children using the child's ID to keep track of which chores are assigned to who.
 
-###ChildrenList + ChildRow
+### ChildrenList + ChildRow
 
 A list of all children in the household generated through ChildRow, where you can add and delete children. 
 
