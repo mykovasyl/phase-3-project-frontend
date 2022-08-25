@@ -39,7 +39,6 @@ function AssignChores({ children, chores, setChores }) {
   }
 
   function handleChange(e) {
-    console.log(`name: ${e.target.name}, value: ${e.target.value}`);
     setNewChore({ ...newChore, [e.target.name]: e.target.value });
   }
 
