@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import Home from "./Home";
 import ChoreList from "./ChoreList";
 import AssignChores from "./AssignChores";
-import AddChildren from "./AddChildren";
+import ChildrenList from "./ChildrenList";
 
 function App() {
   const [children, setChildren] = useState([]);
@@ -43,8 +43,8 @@ function App() {
             setChores={setChores}
           />
         </Route>
-        <Route path="/addchildren">
-          <AddChildren children={children} setChildren={setChildren} />
+        <Route path="/childrenlist">
+          <ChildrenList children={children} setChildren={setChildren} />
         </Route>
         <Route exact path="/">
           <Home />
@@ -53,7 +53,7 @@ function App() {
           <h1>404 path not found</h1>
           <h3>
             Try using the following paths: /, /chorelist, /assignchores,
-            /addchildren
+            /childrenlist
           </h3>
         </Route>
       </Switch>

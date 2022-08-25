@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ChildRow from "./ChildRow";
 
-function AddChildren({ children, setChildren }) {
+function ChildrenList({ children, setChildren }) {
   const [childName, setChildName] = useState();
 
   function handleNameInput(e) {
@@ -63,4 +63,4 @@ function AddChildren({ children, setChildren }) {
   );
 }
 
-export default AddChildren;
+export default ChildrenList;

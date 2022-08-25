@@ -36,8 +36,8 @@ function Home() {
         the chore will be assigned to.
       </p>
       <nav>
-        <Link to="/addchildren">
-          <h2>Add Children</h2>
+        <Link to="/childrenlist">
+          <h2>Children List</h2>
         </Link>
       </nav>
       <p>
