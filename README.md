@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Chores Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application was built as a 3rd project for Flatiron's Software Engineering bootcamp. The front end mimics what a parent would see on their side of the login. Since logins are not currently part of the curriculum, several aspects of the application remain unfinished for a later time. 
+
+## Back End 
+
+The backend is built on Ruby and uses ActiveRecord for the models. [Backend](https://github.com/mykovasyl/phase-3-sinatra-react-project-backend)
+
+## Components
+
+### ChoreList + ChoreRow
+
+Chore List creates two tables, one for current and one for completed chores, using the Chore Row component to create each line on the tables.
+
+### AssignChores
+
+Here chores are assigned to children using the child's ID to keep track of which chores are assigned to who.
+
+### ChildrenList + ChildRow
+
+A list of all children in the household generated through ChildRow, where you can add and delete children. 
 
 ## Available Scripts
 
