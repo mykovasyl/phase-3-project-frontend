@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
+import Button from "react-bootstrap/Button";
 
 function ChoreRow({
   id,
@@ -21,12 +22,12 @@ function ChoreRow({
       <td>{dueBy}</td>
       <td>{childName}</td>
       <td>
-        <button onClick={handleEdit}>
+        <Button variant="danger" onClick={handleEdit}>
           <FaEdit />
-        </button>
-        <button>
+        </Button>
+        <Button variant="warning">
           <FaTrashAlt onClick={() => handleDelete(id)} />
-        </button>
+        </Button>
       </td>
     </tr>
   );

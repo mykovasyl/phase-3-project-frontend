@@ -44,7 +44,7 @@ function ChildRow({ id, name, children, setChildren }) {
         <div>
           <button onClick={handleEdit}>
             <FaEdit />
-          </button>
+          </button>{" "}
           <button onClick={handleDelete}>
             <HiTrash />
           </button>

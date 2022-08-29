@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import ChildRow from "./ChildRow";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Table from "react-bootstrap/Table";
 
 function ChildrenList({ children, setChildren }) {
   const [childName, setChildName] = useState();
@@ -38,27 +43,36 @@ function ChildrenList({ children, setChildren }) {
 
   return (
     <div>
-      <h1>Add Children To Your Household</h1>
-      <br></br>
-      <p>Type your child's name and click submit</p>
-      <form onSubmit={handleNewChild}>
-        <input type="text" value={childName} onChange={handleNameInput} />
-        <button type="submit">Submit</button>
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <td>Current Children</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Name</td>
-            <td>Edit/Delete</td>
-          </tr>
-          {childrenRows}
-        </tbody>
-      </table>
+      <h1>Manage Children In Your Household</h1>
+
+      <Form onSubmit={handleNewChild}>
+        <Form.Label style={{ margin: "10px" }}>
+          Enter your child's name to add them.
+        </Form.Label>
+        <Col md={{ span: 4, offset: 4 }}>
+          <Form.Control
+            type="text"
+            value={childName}
+            onChange={handleNameInput}
+          />
+        </Col>
+        <Button style={{ margin: "10px" }} size="sm" type="submit">
+          Submit
+        </Button>
+      </Form>
+      <Row className="justify-content-md-center">
+        <Col md={5}>
+          <Table bordered>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Edit/Delete</th>
+              </tr>
+            </thead>
+            <tbody>{childrenRows}</tbody>
+          </Table>
+        </Col>
+      </Row>
     </div>
   );
 }

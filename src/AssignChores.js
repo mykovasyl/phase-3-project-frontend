@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 function AssignChores({ children, chores, setChores }) {
   const [newChore, setNewChore] = useState({
@@ -51,52 +56,69 @@ function AssignChores({ children, chores, setChores }) {
   });
 
   return (
-    <div>
-      <h1>Assign Chores</h1>
-      <p>
-        Please fill out this form to assign a chore to a child in your
-        household.
-      </p>
-      <form onSubmit={handleSubmit}>
-        <label>Chore name:</label>
-        <input
-          type="text"
-          name="name"
-          value={newChore.name}
-          onChange={handleChange}
-        ></input>
-        <br></br>
-        <label>Due by:</label>
-        <input
-          type="date"
-          name="due_by"
-          value={newChore.due_by}
-          onChange={handleChange}
-        ></input>
-        <br></br>
-        <label>Points awarded upon completion:</label>
-        <input
-          type="number"
-          name="points"
-          value={newChore.points}
-          onChange={handleChange}
-        ></input>
-        <br></br>
-        <label>Assign to child:</label>
-        <select
-          name="child_id"
-          value={newChore.child_id}
-          onChange={handleChange}
-        >
-          <option value="">Select a child</option>
-          {childOptions}
-        </select>
-        <br></br>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <Container fluid>
+      <Row>
+        <Col>
+          <h1>Assign Chores</h1>
+          <p>
+            Please fill out this form to assign a chore to a child in your
+            household.
+          </p>
+        </Col>
+      </Row>
+      <Row lg={3} className="justify-content-md-center">
+        <Col>
+          <Form className="mb-3" onSubmit={handleSubmit}>
+            <Row>
+              <Form.Group as={Col} md={8} className="mb-3">
+                <Form.Label>Chore name:</Form.Label>
+                <Form.Control
+                  className="mb-3"
+                  type="text"
+                  name="name"
+                  value={newChore.name}
+                  onChange={handleChange}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group as={Col} md={4} className="mb-3">
+                <Form.Label>Due by:</Form.Label>
+                <Form.Control
+                  type="date"
+                  name="due_by"
+                  value={newChore.due_by}
+                  onChange={handleChange}
+                ></Form.Control>
+              </Form.Group>
+            </Row>
+            <Row>
+              <Form.Group as={Col} md={4} className="mb-3">
+                <Form.Label>Points awarded:</Form.Label>
+                <Form.Control
+                  type="number"
+                  name="points"
+                  value={newChore.points}
+                  onChange={handleChange}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group as={Col} className="mb-3">
+                <Form.Label>Assign to child:</Form.Label>
+                <Form.Select
+                  name="child_id"
+                  value={newChore.child_id}
+                  onChange={handleChange}
+                >
+                  <option value="">Select a child</option>
+                  {childOptions}
+                </Form.Select>
+              </Form.Group>
+            </Row>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
