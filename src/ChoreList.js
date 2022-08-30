@@ -52,8 +52,8 @@ function ChoreList({ chores, setChores, children }) {
 
       <br></br>
       <Row>
-        <Col>
-          <p>Current chores ({currentChores.length}):</p>
+        <Col md={6}>
+          <h5>Current chores ({currentChores.length}):</h5>
           <Table striped hover style={{ marginTop: "20px" }}>
             <thead>
               <tr>
@@ -67,9 +67,8 @@ function ChoreList({ chores, setChores, children }) {
             <tbody>{currentChoreRows}</tbody>
           </Table>
         </Col>
-        <Col>
-          <br></br>
-          <p>Completed chores ({completedChores.length}):</p>
+        <Col md={6}>
+          <h5>Completed chores ({completedChores.length}):</h5>
           <Table striped hover style={{ marginTop: "20px" }}>
             <thead>
               <tr>

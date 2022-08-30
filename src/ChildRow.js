@@ -78,6 +78,7 @@ function ChildRow({ id, name, children, setChildren, chores, setChores }) {
             onChange={handleNameInput}
           ></input>
         )}
+        <td></td>
       </td>
       <td>{changeButtons()}</td>
     </tr>
