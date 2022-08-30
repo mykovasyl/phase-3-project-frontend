@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const linkStyling = { textDecoration: "none" };
   return (
     <div>
-      <h1>Welcome to Chores Gallore!</h1>
+      <h1 style={{ marginTop: "15px" }}>Welcome to Chores Gallore!</h1>
       <p>
         This Application was built to encourage children to do their chores
         through a game style level system.
@@ -22,7 +23,7 @@ function Home() {
         with the child's input.
       </p>
       <nav>
-        <Link to="/assignchores">
+        <Link style={linkStyling} to="/assignchores">
           <h2>Assign Chores</h2>
         </Link>
       </nav>
@@ -36,7 +37,7 @@ function Home() {
         the chore will be assigned to.
       </p>
       <nav>
-        <Link to="/childrenlist">
+        <Link style={linkStyling} to="/childrenlist">
           <h2>Children List</h2>
         </Link>
       </nav>
@@ -46,7 +47,7 @@ function Home() {
       </p>
       <p>Every child's points automatically start at 0.</p>
       <nav>
-        <Link to="/chorelist">
+        <Link style={linkStyling} to="/chorelist">
           <h2>Chore List</h2>
         </Link>
       </nav>

@@ -22,6 +22,9 @@ function ChildrenList({ children, setChildren }) {
       },
       body: JSON.stringify({ name: childName }),
     })
+      .catch((err) => {
+        alert(`Form not submitted. Reason: ${err}. Please try again.`);
+      })
       .then((resp) => resp.json())
       .then((newChild) => {
         setChildren([...children, newChild]);
@@ -43,10 +46,10 @@ function ChildrenList({ children, setChildren }) {
 
   return (
     <div>
-      <h1>Manage Children In Your Household</h1>
+      <h1 style={{ marginTop: "20px" }}>Manage Children In Your Household</h1>
 
       <Form onSubmit={handleNewChild}>
-        <Form.Label style={{ margin: "10px" }}>
+        <Form.Label style={{ margin: "20px" }}>
           Enter your child's name to add them.
         </Form.Label>
         <Col md={{ span: 4, offset: 4 }}>
@@ -56,13 +59,13 @@ function ChildrenList({ children, setChildren }) {
             onChange={handleNameInput}
           />
         </Col>
-        <Button style={{ margin: "10px" }} size="sm" type="submit">
+        <Button style={{ margin: "20px" }} size="sm" type="submit">
           Submit
         </Button>
       </Form>
       <Row className="justify-content-md-center">
         <Col md={5}>
-          <Table bordered>
+          <Table bordered style={{ marginTop: "20px" }}>
             <thead>
               <tr>
                 <th>Name</th>

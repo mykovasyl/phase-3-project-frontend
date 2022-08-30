@@ -2,16 +2,40 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
 
 function NavBar() {
+  const linkStyling = { textDecoration: "none", color: "white" };
+
   return (
-    <Navbar>
-      <Nav className="flex-row justify-content-center">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/chorelist">Chore Table</Nav.Link>
-        <Nav.Link href="/assignchores">Assign Chores</Nav.Link>
-        <Nav.Link href="/childrenlist">Children</Nav.Link>
+    <Navbar
+      bg="dark"
+      variant="dark"
+      className="flex-row justify-content-center"
+    >
+      <Navbar.Brand style={{ marginRight: "auto", paddingLeft: "15px" }}>
+        Chores Gallore
+      </Navbar.Brand>
+      <Nav>
+        <Nav.Link>
+          <Link to="/" style={linkStyling}>
+            Home
+          </Link>
+        </Nav.Link>
+        <Nav.Link>
+          <Link to="/chorelist" style={linkStyling}>
+            Chore Table
+          </Link>
+        </Nav.Link>
+        <Nav.Link>
+          <Link to="/assignchores" style={linkStyling}>
+            Assign Chores
+          </Link>
+        </Nav.Link>
+        <Nav.Link>
+          <Link to="/childrenlist" style={linkStyling}>
+            Children
+          </Link>
+        </Nav.Link>
       </Nav>
     </Navbar>
   );

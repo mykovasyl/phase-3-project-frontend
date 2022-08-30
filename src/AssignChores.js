@@ -56,7 +56,7 @@ function AssignChores({ children, chores, setChores }) {
   });
 
   return (
-    <Container fluid>
+    <Container>
       <Row>
         <Col>
           <h1>Assign Chores</h1>
@@ -66,7 +66,7 @@ function AssignChores({ children, chores, setChores }) {
           </p>
         </Col>
       </Row>
-      <Row lg={3} className="justify-content-md-center">
+      <Row lg={2} className="justify-content-md-center">
         <Col>
           <Form className="mb-3" onSubmit={handleSubmit}>
             <Row>
