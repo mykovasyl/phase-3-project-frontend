@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import Home from "./Home";
-import ChoreList from "./ChoreList";
+import Chores from "./Chores";
 import AssignChores from "./AssignChores";
 import ChildrenList from "./ChildrenList";
 
@@ -29,12 +29,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/chorelist">
-          <ChoreList
-            chores={chores}
-            setChores={setChores}
-            children={children}
-          />
+        <Route path="/chores">
+          <Chores chores={chores} setChores={setChores} children={children} />
         </Route>
         <Route path="/assignchores">
           <AssignChores

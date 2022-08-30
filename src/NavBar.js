@@ -26,8 +26,8 @@ function NavBar() {
           </Link>
         </Nav.Link>
         <Nav.Link>
-          <Link to="/chorelist" style={linkStyling}>
-            Chore Table
+          <Link to="/chores" style={linkStyling}>
+            Chores
           </Link>
         </Nav.Link>
         <Nav.Link>

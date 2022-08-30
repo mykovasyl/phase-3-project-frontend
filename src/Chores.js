@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 
-function ChoreList({ chores, setChores, children }) {
+function Chores({ chores, setChores, children }) {
   const currentChores = chores.filter((chore) => chore.completed === false);
   const completedChores = chores.filter((chore) => chore.completed === true);
 
@@ -48,7 +48,7 @@ function ChoreList({ chores, setChores, children }) {
 
   return (
     <div>
-      <h1 style={{ marginTop: "20px" }}>Chore List</h1>
+      <h1 style={{ marginTop: "20px" }}>Chores</h1>
 
       <br></br>
       <Row>
@@ -87,4 +87,4 @@ function ChoreList({ chores, setChores, children }) {
   );
 }
 
-export default ChoreList;
+export default Chores;

@@ -47,8 +47,8 @@ function Home() {
       </p>
       <p>Every child's points automatically start at 0.</p>
       <nav>
-        <Link style={linkStyling} to="/chorelist">
-          <h2>Chore List</h2>
+        <Link style={linkStyling} to="/chores">
+          <h2>Chores</h2>
         </Link>
       </nav>
       <p>Two organized tables of all current and completed chores.</p>
