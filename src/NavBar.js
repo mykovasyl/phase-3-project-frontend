@@ -12,7 +12,11 @@ function NavBar() {
       variant="dark"
       className="flex-row justify-content-center"
     >
-      <Navbar.Brand style={{ marginRight: "auto", paddingLeft: "15px" }}>
+      <Navbar.Brand
+        as={Link}
+        to="/"
+        style={{ marginRight: "auto", paddingLeft: "15px" }}
+      >
         Chores Gallore
       </Navbar.Brand>
       <Nav>
@@ -31,7 +35,7 @@ function NavBar() {
             Assign Chores
           </Link>
         </Nav.Link>
-        <Nav.Link>
+        <Nav.Link style={{ marginRight: "10px" }}>
           <Link to="/childrenlist" style={linkStyling}>
             Children
           </Link>

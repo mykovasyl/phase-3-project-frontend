@@ -32,6 +32,7 @@ function AssignChores({ children, chores, setChores }) {
       })
         .then((resp) => resp.json())
         .then((postedChore) => {
+          alert("Submitted successfully! New chore added to the Chore Table.");
           setChores([...chores, postedChore]);
           setNewChore({
             name: "",
@@ -39,6 +40,9 @@ function AssignChores({ children, chores, setChores }) {
             points: "",
             child_id: "",
           });
+        })
+        .catch((err) => {
+          alert(`Form not submitted. Reason: ${err}. Please try again.`);
         });
     }
   }
@@ -59,10 +63,10 @@ function AssignChores({ children, chores, setChores }) {
     <Container>
       <Row>
         <Col>
-          <h1>Assign Chores</h1>
-          <p>
-            Please fill out this form to assign a chore to a child in your
-            household.
+          <h1 style={{ marginTop: "20px" }}>Assign Chores</h1>
+          <p style={{ marginBottom: "20px" }}>
+            Please fill out the form to assign a chore to a child<br></br> in
+            your household.
           </p>
         </Col>
       </Row>

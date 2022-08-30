@@ -44,7 +44,12 @@ function App() {
           />
         </Route>
         <Route path="/childrenlist">
-          <ChildrenList children={children} setChildren={setChildren} />
+          <ChildrenList
+            children={children}
+            setChildren={setChildren}
+            chores={chores}
+            setChores={setChores}
+          />
         </Route>
         <Route exact path="/">
           <Home />

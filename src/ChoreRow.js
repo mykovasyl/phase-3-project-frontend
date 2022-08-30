@@ -22,10 +22,10 @@ function ChoreRow({
       <td>{dueBy}</td>
       <td>{childName}</td>
       <td>
-        <Button variant="danger" onClick={handleEdit}>
+        <Button variant="warning" onClick={handleEdit}>
           <FaEdit />
         </Button>
-        <Button variant="warning">
+        <Button variant="danger">
           <FaTrashAlt onClick={() => handleDelete(id)} />
         </Button>
       </td>

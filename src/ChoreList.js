@@ -1,5 +1,8 @@
 import React from "react";
 import ChoreRow from "./ChoreRow";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Table from "react-bootstrap/Table";
 
 function ChoreList({ chores, setChores, children }) {
   const currentChores = chores.filter((chore) => chore.completed === false);
@@ -45,33 +48,42 @@ function ChoreList({ chores, setChores, children }) {
 
   return (
     <div>
-      <h1>Chore List</h1>
-      <p>Currently assigned chores ({currentChores.length}):</p>
-      <table>
-        <thead>
-          <tr>
-            <td>Chore</td>
-            <td>Points</td>
-            <td>Due By</td>
-            <td>Assigned to</td>
-            <td>Edit(not available)/Delete</td>
-          </tr>
-        </thead>
-        <tbody>{currentChoreRows}</tbody>
-      </table>
-      <p>Completed chores ({completedChores.length}):</p>
-      <table>
-        <thead>
-          <tr>
-            <td>Chore</td>
-            <td>Points</td>
-            <td>Due By</td>
-            <td>Assigned to</td>
-            <td>Edit(not available)/Delete</td>
-          </tr>
-        </thead>
-        <tbody>{completedChoreRows}</tbody>
-      </table>
+      <h1 style={{ marginTop: "20px" }}>Chore List</h1>
+
+      <br></br>
+      <Row>
+        <Col>
+          <p>Current chores ({currentChores.length}):</p>
+          <Table striped hover style={{ marginTop: "20px" }}>
+            <thead>
+              <tr>
+                <td>Chore</td>
+                <td>Points</td>
+                <td>Due By</td>
+                <td>Assigned to</td>
+                <td>Edit(not available)/Delete</td>
+              </tr>
+            </thead>
+            <tbody>{currentChoreRows}</tbody>
+          </Table>
+        </Col>
+        <Col>
+          <br></br>
+          <p>Completed chores ({completedChores.length}):</p>
+          <Table striped hover style={{ marginTop: "20px" }}>
+            <thead>
+              <tr>
+                <td>Chore</td>
+                <td>Points</td>
+                <td>Due By</td>
+                <td>Assigned to</td>
+                <td>Edit(not available)/Delete</td>
+              </tr>
+            </thead>
+            <tbody>{completedChoreRows}</tbody>
+          </Table>
+        </Col>
+      </Row>
     </div>
   );
 }

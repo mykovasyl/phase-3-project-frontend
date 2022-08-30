@@ -5,7 +5,7 @@ function Home() {
   const linkStyling = { textDecoration: "none" };
   return (
     <div>
-      <h1 style={{ marginTop: "15px" }}>Welcome to Chores Gallore!</h1>
+      <h1 style={{ marginTop: "20px" }}>Welcome to Chores Gallore!</h1>
       <p>
         This Application was built to encourage children to do their chores
         through a game style level system.

@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 
-function ChildrenList({ children, setChildren }) {
+function ChildrenList({ children, setChildren, chores, setChores }) {
   const [childName, setChildName] = useState();
 
   function handleNameInput(e) {
@@ -15,21 +15,25 @@ function ChildrenList({ children, setChildren }) {
 
   function handleNewChild(e) {
     e.preventDefault();
-    fetch("http://localhost:9292/children", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name: childName }),
-    })
-      .catch((err) => {
-        alert(`Form not submitted. Reason: ${err}. Please try again.`);
+    if (childName === "") {
+      alert("Please make sure to fill in a name!");
+    } else {
+      fetch("http://localhost:9292/children", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: childName }),
       })
-      .then((resp) => resp.json())
-      .then((newChild) => {
-        setChildren([...children, newChild]);
-        setChildName("");
-      });
+        .then((resp) => resp.json())
+        .then((newChild) => {
+          setChildren([...children, newChild]);
+          setChildName("");
+        })
+        .catch((err) => {
+          alert(`Form not submitted. Reason: ${err}. Please try again.`);
+        });
+    }
   }
 
   let childrenRows = children.map((child) => {
@@ -40,6 +44,8 @@ function ChildrenList({ children, setChildren }) {
         name={child.name}
         children={children}
         setChildren={setChildren}
+        chores={chores}
+        setChores={setChores}
       />
     );
   });
