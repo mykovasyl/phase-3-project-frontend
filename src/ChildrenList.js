@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 
 function ChildrenList({ children, setChildren, chores, setChores }) {
-  const [childName, setChildName] = useState();
+  const [childName, setChildName] = useState("");
 
   function handleNameInput(e) {
     setChildName(e.target.value);

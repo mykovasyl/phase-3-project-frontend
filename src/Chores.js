@@ -25,7 +25,7 @@ function Chores({ chores, setChores, children }) {
         points={chore.points}
         dueBy={chore.due_by}
         children={children}
-        childId={chore.child_id}
+        child={chore.child}
         handleDelete={handleDelete}
       />
     );
@@ -40,7 +40,7 @@ function Chores({ chores, setChores, children }) {
         points={chore.points}
         dueBy={chore.due_by}
         children={children}
-        childId={chore.child_id}
+        child={chore.child}
         handleDelete={handleDelete}
       />
     );
