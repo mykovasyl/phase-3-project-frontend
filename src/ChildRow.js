@@ -43,7 +43,13 @@ function ChildRow({ id, name, children, setChildren, chores, setChores }) {
     })
       .then((resp) => resp.json())
       .then((updatedChild) => {
-        console.log(updatedChild);
+        const updatedChildren = children.map((child) => {
+          if (child.id === updatedChild.id) {
+            return { ...child, updatedChild };
+          }
+          return child;
+        });
+        setChildren(updatedChildren);
       });
   }
 
