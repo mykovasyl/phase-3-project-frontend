@@ -14,9 +14,11 @@ function ChildRow({ id, name, children, setChildren, chores, setChores }) {
     fetch(`http://localhost:9292/children/${id}`, {
       method: "DELETE",
     });
-    fetch(`http://localhost:9292/chores/${choreToDelete.id}`, {
-      method: "DELETE",
-    });
+    if (choreToDelete !== undefined) {
+      fetch(`http://localhost:9292/chores/${choreToDelete.id}`, {
+        method: "DELETE",
+      });
+    }
     setChildren(newChildren);
     setChores(newChores);
   }

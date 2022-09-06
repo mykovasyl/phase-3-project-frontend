@@ -8,6 +8,12 @@ function Chores({ chores, setChores, children }) {
   const currentChores = chores.filter((chore) => chore.completed === false);
   const completedChores = chores.filter((chore) => chore.completed === true);
 
+  // function handleMistake() {
+  //   fetch(`http://localhost:9292/chores/${id_to_delete}`, {
+  //     method: "DELETE",
+  //   });
+  // }
+
   function handleDelete(id) {
     const choresAfterDelete = chores.filter((chore) => chore.id !== id);
     fetch(`http://localhost:9292/chores/${id}`, {
@@ -50,6 +56,7 @@ function Chores({ chores, setChores, children }) {
 
   return (
     <div>
+      {/* <p>{handleMistake()}</p> */}
       <h1 style={{ marginTop: "20px" }}>Chores</h1>
 
       <br></br>
