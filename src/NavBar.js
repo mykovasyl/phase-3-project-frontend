@@ -23,11 +23,11 @@ function NavBar() {
         <Nav.Link as={Link} to="/" style={linkStyling}>
           Home
         </Nav.Link>
-        <Nav.Link as={Link} to="/chores" style={linkStyling}>
-          Chores
-        </Nav.Link>
         <Nav.Link as={Link} to="/assignchores" style={linkStyling}>
           Assign Chores
+        </Nav.Link>
+        <Nav.Link as={Link} to="/chores" style={linkStyling}>
+          Chores
         </Nav.Link>
         <Nav.Link
           as={Link}

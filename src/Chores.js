@@ -24,6 +24,7 @@ function Chores({ chores, setChores, children }) {
         name={chore.name}
         points={chore.points}
         dueBy={chore.due_by}
+        completed={chore.completed}
         children={children}
         child={chore.child}
         handleDelete={handleDelete}
@@ -39,6 +40,7 @@ function Chores({ chores, setChores, children }) {
         name={chore.name}
         points={chore.points}
         dueBy={chore.due_by}
+        completed={chore.completed}
         children={children}
         child={chore.child}
         handleDelete={handleDelete}
@@ -61,7 +63,7 @@ function Chores({ chores, setChores, children }) {
                 <td>Points</td>
                 <td>Due By</td>
                 <td>Assigned to</td>
-                <td>Edit(not available)/Delete</td>
+                <td>Edit/Delete</td>
               </tr>
             </thead>
             <tbody>{currentChoreRows}</tbody>
@@ -75,8 +77,8 @@ function Chores({ chores, setChores, children }) {
                 <td>Chore</td>
                 <td>Points</td>
                 <td>Due By</td>
-                <td>Assigned to</td>
-                <td>Edit(not available)/Delete</td>
+                <td>Completed by</td>
+                <td>Delete</td>
               </tr>
             </thead>
             <tbody>{completedChoreRows}</tbody>
